@@ -94,19 +94,19 @@ function App() {
     <>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="#home">Firebase Firestore Import Demo</Navbar.Brand>
+          <Navbar.Brand href="#home">Importação de XLSX</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
             </Nav>
-            <Button variant="outline-success" onClick={handleShow}>Import</Button>
+            <Button variant="outline-success" onClick={handleShow}>Importar</Button>
           </Navbar.Collapse>
         </Container>
       </Navbar>
       <Container>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Import a CSV or XLSX</Modal.Title>
+            <Modal.Title>Selecionar arquivo</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             {headers.length < 1 ||  rows.length < 1 ?
@@ -142,10 +142,10 @@ function App() {
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
-              Close
+              Cancelar
             </Button>
             <Button variant="primary" onClick={handleSubmit}>
-              Save Changes
+              Enviar
             </Button>
           </Modal.Footer>
         </Modal>
@@ -153,8 +153,8 @@ function App() {
           <thead>
           <tr>
             <th>#</th>
-            <th>Name</th>
-            <th>Age</th>
+            <th>Nome</th>
+            <th>Idade</th>
           </tr>
           </thead>
           <tbody>
