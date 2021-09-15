@@ -21,8 +21,6 @@ function App() {
   const [headers, setHeaders] = useState([]);
   const [rows, setRows] = useState([]);
 
-  const excel_file_path = "./excel_templates/planilha-teste.xlsx";
-
   useEffect(() => {
     fetchUsers();
   }, []);
@@ -106,24 +104,12 @@ function App() {
     // create a workbook variable
     var wb = new ExcelJS.Workbook();
     const ws = wb.addWorksheet();
-    /* const row = ws.addRow(['a', 'b', 'c'])
-    row.font = { bold: true }
-    const buf = await wb.xlsx.writeBuffer()
-    saveAs(new Blob([buf]), 'abc.xlsx')  */
     addRowsToExcelSheet(snapData, wb, ws);
-
-    // read excel file from the path
-    //workbook.xlsx.readFile(excel_file_path).then(function () {
-    // access the excel sheet
-    //var worksheet = workbook.getWorksheet("Sheet1");
-    //addRowsToExcelSheet(snapData, workbook, worksheet);
-    //});
   }
 
   async function addRowsToExcelSheet(snapData, workbook, worksheet) {
     // for loop to read each record from Products table
     snapData.forEach(function (data) {
-      console.log(data, "data");
       // get value for the record
       const val = data;
       // Add a row by sparse Array (assign to columns)
